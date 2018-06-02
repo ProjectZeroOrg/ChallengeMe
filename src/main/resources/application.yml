@@ -1,0 +1,18 @@
+server:
+    session:
+        cookie:
+            name: UI_SESSION
+
+security:
+    user:
+        password: none
+    oauth2:
+        client:
+            accessTokenUri: https://${AUTH_HOST:auth-dev.46.249.93.103.nip.io}/oauth/token
+            userAuthorizationUri: https://${AUTH_HOST:auth-dev.46.249.93.103.nip.io}/oauth/authorize
+            clientId: ${CLIENT_APP_ID:Challenge Me}
+            clientSecret: ${CLIENT_APP_SECRET:challengeMeSecret}
+        resource:
+            jwt:
+                key-uri: https://${AUTH_HOST:auth-dev.46.249.93.103.nip.io}/oauth/token_key
+    trusted-ssl-hosts: ${TRUSTED_SLL_HOSTS:auth-dev.46.249.93.103.nip.io,auth.46.249.93.103.nip.io}
