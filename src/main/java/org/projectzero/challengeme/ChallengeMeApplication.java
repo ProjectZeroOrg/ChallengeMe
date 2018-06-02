@@ -10,12 +10,16 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import java.util.Arrays;
 
 @SpringBootApplication
-@EnableOAuth2Sso
 public class ChallengeMeApplication extends WebSecurityConfigurerAdapter {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ChallengeMeApplication.class, args);
 	}
+
+  @Value("${security.auth-trust-store}")
+  public void setupTrustedSsl(String authTrustStore) {
+    System.setProperty("javax.net.ssl.trustStore", authTrustStore);
+  }
 
   @Value("${security.trusted-ssl-hosts:46.249.93.103}")
 	public void setTrustedSslHosts(String trustedSslHosts) {

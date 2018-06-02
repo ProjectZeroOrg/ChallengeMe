@@ -16,3 +16,4 @@ security:
             jwt:
                 key-uri: https://${AUTH_HOST:auth-dev.46.249.93.103.nip.io}/oauth/token_key
     trusted-ssl-hosts: ${TRUSTED_SLL_HOSTS:auth-dev.46.249.93.103.nip.io,auth.46.249.93.103.nip.io}
+    auth-trust-store: ${AUTH_TRUST_STORE:/truststore/trust-auth-dev}
