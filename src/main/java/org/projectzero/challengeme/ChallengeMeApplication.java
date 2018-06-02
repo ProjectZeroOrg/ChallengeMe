@@ -10,6 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import java.util.Arrays;
 
 @SpringBootApplication
+@EnableOAuth2Sso
 public class ChallengeMeApplication extends WebSecurityConfigurerAdapter {
 
 	public static void main(String[] args) {
