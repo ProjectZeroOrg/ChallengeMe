@@ -35,7 +35,7 @@ public class ChallengeMeApplication extends WebSecurityConfigurerAdapter {
     http
       .logout().and()
       .authorizeRequests()
-        .antMatchers("/", "/login", "/index.html", "/health",
+        .antMatchers("/", "/login", "/index.html", "/actuator/**",
           "/*.js", "/*.css", "/*.ico", "/*.png", "/*image**")
         .permitAll()
         .anyRequest().authenticated();

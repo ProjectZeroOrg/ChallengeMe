@@ -4,9 +4,10 @@ server:
             name: UI_SESSION
 
 management:
-    port: 8081
-    security:
-        enabled: false
+    server:
+        port: 8081
+        ssl:
+            enabled: false
 
 security:
     user:
