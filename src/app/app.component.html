@@ -6,16 +6,18 @@
 
   <mat-sidenav-container class="app-sidenav-container"
                          [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+    <mat-sidenav #snav class="mat-elevation-z10"
+                 [mode]="mobileQuery.matches ? 'over' : 'side'"
+                 [opened]="!mobileQuery.matches"
                  [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
       <mat-nav-list>
-        <a mat-list-item routerLink=".">Home</a>
-        <a mat-list-item routerLink=".">Top 10</a>
+        <a mat-list-item routerLink="home">Home</a>
+        <a mat-list-item routerLink="top-challenges">Top 10</a>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <p>Welcome to {{ title }}!</p>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
