@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
+import { OAuthModule } from 'angular-oauth2-oidc';
 import { AppMaterialModule } from './app-material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,8 @@ import { PageNotFoundComponent } from "src/app/page-not-found/page-not-found.com
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    OAuthModule.forRoot(),
     AppMaterialModule,
     AppRoutingModule
   ],
